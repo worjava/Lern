@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор файла с вопросами</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            padding: 30px;
+        }
+
+        .java-image {
+            display: block;
+            margin: 0 auto;
+            width: 150px; /* Уменьшил размер изображения */
+            height: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545 !important;
+            border-color: #dc3545 !important;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333 !important;
+            border-color: #bd2130 !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img class="java-image" src="https://lh6.ggpht.com/JaJws_AFFLyX11rN7nbmp3_CXgoWgrPcgqfQTVciTjj1mcG6uVRWrQWu0PLnkjsQ4cs" alt="JAVA">
+    <h1>Добро пожаловать на платформу подготовки JAVA Developer(Backend)</h1>
+    <h1>Выберите блок с вопросами</h1>
+    <form action="/question" method="get">
+        <div class="form-group">
+            <label for="fileSelect">Выберите файл:</label>
+            <select class="form-control" name="filename" id="fileSelect">
+                <option value="1. Вопросы для подготовки, core-1.docx">Core1</option>
+                <option value="2. Вопросы для подготовки, core-2.docx">Core2</option>
+                <option value="3. Вопросы для подготовки, многопоточность.docx">Многопоточка</option>
+                <option value="4. Вопросы для подготовки, SQL.docx">SQL</option>
+                <option value="5. Вопросы для подготовки, Hibernate.docx">Hibernate</option>
+                <option value="6. Вопросы для подготовки, Spring.docx">Spring</option>
+                <option value="7. Вопросы для подготовки, паттерны.docx">Pattern</option>
+                <option value="8. Вопросы для подготовки, алгоритмы.docx">Algorithm</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Загрузить и просмотреть вопросы</button>
+    </form>
+    <a href="/randomQuestion?filename=БОСС.docx"><button class="btn btn-danger" type="button">BOSS!!!</button></a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
